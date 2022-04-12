@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ContactListFragment"
+    android:id="@+id/constraintLayoutProfile">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar3"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+            app:subtitle="Contact"
+            app:subtitleTextColor="@color/purple_500"
+            app:title="@string/app_name">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:layout_marginRight="16dp"
+                android:backgroundTint="@color/white"
+                android:text="@string/edit"
+                android:textColor="@color/purple_500"
+                android:textSize="12sp"
+                app:cornerRadius="8dp"
+                app:elevation="50dp"
+                app:icon="@drawable/pencil"
+                app:iconSize="16dp"
+                app:iconTint="@color/purple_500"
+                app:strokeColor="@color/purple_500"
+                app:strokeWidth="1dp" />
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/profile_info_layout"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="50dp"
+            android:backgroundTint="@color/transparent"
+            app:cardElevation="0dp">
+            <ImageView
+                android:id="@+id/contactImageView"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_account_circle_24" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/contactNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="James Cho"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/contactHobbiesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Gaming"
+            android:textColor="@color/purple_500"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/eventsHeader"
+        app:layout_constraintTop_toBottomOf="@+id/profile_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            app:layout_constraintStart_toStartOf="@id/eventsHeader"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Events"
+            android:textColor="@color/purple_500"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            app:layout_constraintEnd_toEndOf="@id/eventsHeader"
+            android:id="@+id/addEventButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/purple_500"
+            android:text="Add"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:cornerRadius="20dp"
+            app:icon="@drawable/ic_baseline_add_24"
+            app:iconSize="22dp"
+            app:iconTint="@color/white" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@+id/eventsHeader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/contactEventRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constrainedHeight="true"
+        tools:listitem="@layout/event_item" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Gift Tracker</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="edit">Edit</string>
+</resources>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.gifttracker.fragments.DashboardFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_contactListFragment"
+            app:destination="@id/contactListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.gifttracker.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactListFragment"
+        android:name="com.example.gifttracker.fragments.ContactListFragment"
+        android:label="fragment_contact_list"
+        tools:layout="@layout/fragment_contact_list" >
+        <action
+            android:id="@+id/action_contactListFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_contactListFragment_to_profileFragment"
+            app:destination="@id/contactFragment" />
+        <action
+            android:id="@+id/action_contactListFragment_to_createContactFragment"
+            app:destination="@id/createContactFragment" />
+        <action
+            android:id="@+id/action_contactListFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.example.gifttracker.fragments.ContactFragment"
+        android:label="fragment_contact"
+        tools:layout="@layout/fragment_contact">
+        <argument
+            android:name="contactID"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_contactFragment_to_contactListFragment"
+            app:destination="@id/contactListFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editContactFragment" />
+        <action
+            android:id="@+id/action_contactFragment_to_giftListFragment"
+            app:destination="@id/giftListFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/editContactFragment"
+        android:name="com.example.gifttracker.fragments.EditContactFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_contact" >
+        <argument
+            android:name="contactID"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createContactFragment"
+        android:name="com.example.gifttracker.fragments.CreateContactFragment"
+        android:label="fragment_create_contact"
+        tools:layout="@layout/fragment_create_contact" >
+        <action
+            android:id="@+id/action_createContactFragment_to_contactListFragment"
+            app:destination="@id/contactListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/giftListFragment"
+        android:name="com.example.gifttracker.fragments.GiftListFragment"
+        android:label="fragment_gift_list"
+        tools:layout="@layout/fragment_gift_list" >
+        <argument
+            android:name="contactID"
+            app:argType="integer" />
+        <argument
+            android:name="eventID"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_giftListFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="start">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="16dp"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="8dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/eventItemConstrainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="8dp">
+
+            <LinearLayout
+                app:layout_constraintLeft_toLeftOf="@+id/eventItemConstrainLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:orientation="vertical"
+                android:layout_margin="8dp">
+
+                <TextView
+                    android:id="@+id/eventNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Event 1"
+                    android:textStyle="bold"
+                    android:textSize="24dp"
+                    android:textColor="@color/black"
+                    android:gravity="center_vertical" />
+
+                <TextView
+                    android:id="@+id/eventDateTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="December 25, 2022"
+                    android:gravity="center_vertical" />
+
+            </LinearLayout>
+
+            <TextView
+                app:layout_constraintRight_toRightOf="@+id/eventItemConstrainLayout"
+                app:layout_constraintBottom_toBottomOf="@+id/eventItemConstrainLayout"
+                app:layout_constraintTop_toTopOf="@+id/eventItemConstrainLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Gift"
+                android:textSize="18dp"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="8dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
